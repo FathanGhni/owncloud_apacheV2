@@ -45,6 +45,12 @@ setelah itu atur dulu pada folder config/config.sample.app
 
 ```
 
+setelah itu sebelum ekskusi, berikan permission terlebih dahulu : 
+```
+chown -R www-data:www-data /var/www/html/config
+chmod -R 755 /var/www/html/config
+```
+
 setelah itu silahkan ekskusi : 
 ```
 # Buat direktori data jika belum ada
