@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  php_cloud:
+    build: .
+    container_name: php_cloud
+    image: latest
+    volumes:
+      - ./src:/var/www/html
+      - ./httpd.vhost.conf:/etc/apache2/sites-available/000-default.conf
+    ports:
+      - 84:80
+
+  db_cloud:
+    image: mariadb:10.2
+    container_name: db_cloud
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "22106:3306"
+    volumes:
+      - ./database/data:/var/lib/mysql
+      - ./database/conf.d:/etc/mysql/conf.d:ro
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 123
+      MYSQL_ROOT_PASSWORD: 123
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
