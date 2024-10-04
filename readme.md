@@ -8,7 +8,7 @@ setelah itu :
 ```
 docker exec -it php_cloud bash
 ```
-setelah itu atur dulu pada folder config/config.sample.app
+setelah tersambung ke docker silahkan atur pada folder config/config.sample.app
 ```
 /**
  * Define the database server host name
@@ -45,7 +45,7 @@ setelah itu atur dulu pada folder config/config.sample.app
 
 ```
 
-setelah itu silahkan ekskusi : 
+jika sudah selesai mengatur pada bagian folder config/config.sample.app silahkan ikuti step-step dibawah ini: 
 ```
 # Buat direktori data jika belum ada
 mkdir -p /var/www/html/data
